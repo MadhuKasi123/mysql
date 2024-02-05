@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: beige;
+       
+    }
+    table{
+        background-color: aquamarine;
+        padding: 10px;
+        border-radius:15px 10px 15px 10px;
+        border: double 5px rgb(232, 13, 199);
+        
+    }
+    h1{
+        background-color: aqua;
+        color: rgb(234, 189, 7);
+    }
+    th{
+        background-color: blueviolet;
+        color: azure;
+        padding: 8px;
+        border-radius: 10px;
+       
+        
+    }
+    td{
+        background-color: aqua;
+        color: brown;
+        padding: 5px;
+        border-radius: 10px;
+    }
+
+</style>
+<body>
+    <center>
+        <h1>Self Joins</h1>
+               <table border="3px">
+                    <tr>
+                        <th>
+                            Ename
+                        </th>
+                        <th>Emangername</th>
+                        <th>Esal</th>
+                        
+                        <th>deptno</th>
+                    </tr>
+            {% for emo in empobjectmanager %}
+            <tr>
+                <td>{{emo.ename}}</td>
+                <td>{{ emo.mgr.ename}}</td>
+                <td>{{emo.sal}}</td>
+                <td>{{ emo.deptno.deptno}}</td>
+            </tr>
+
+            {% endfor %}
+               </table>
+
+    </center>
+</body>
+</html>

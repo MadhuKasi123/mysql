@@ -7,7 +7,7 @@ class Dept(models.Model):
     dlocation=models.CharField(max_length=100)
 
     def __str__(self):
-        return self.dname
+        return str(self.deptno)
 
 class Emp(models.Model):
     empno=models.IntegerField(primary_key=True)
@@ -20,7 +20,7 @@ class Emp(models.Model):
     deptno=models.ForeignKey(Dept,on_delete=models.CASCADE)
     
     def __str__(self):
-        return self.ename
+        return str(self.empno)
 
 
 
